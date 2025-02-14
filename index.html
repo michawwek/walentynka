@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynka</title>
+    <style>
+        body {
+            background-color: #ffc0cb;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20vh;
+        }
+        h1 {
+            color: #d10000;
+            font-size: 2.5em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: #ff0000;
+            color: white;
+        }
+        #no {
+            background-color: white;
+            color: red;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+            font-size: 3em;
+            color: red;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zostaniesz moją walentynką?</h1>
+        <div class="buttons">
+            <button id="yes">Tak</button>
+            <button id="no">Nie</button>
+        </div>
+        <div id="celebration" class="hidden">Jupiiii ❤️🎆🎇</div>
+    </div>
+
+    <script>
+        document.getElementById('yes').addEventListener('click', function() {
+            document.getElementById('celebration').classList.remove('hidden');
+        });
+
+        document.getElementById('no').addEventListener('mouseover', function() {
+            let x = Math.random() * (window.innerWidth - this.offsetWidth);
+            let y = Math.random() * (window.innerHeight - this.offsetHeight);
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
